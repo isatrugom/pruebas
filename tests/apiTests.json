@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "c70ad531-06d4-4013-a172-edd17b93fdd1",
+		"name": "sos10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34a4e2b2-0f25-4956-af3a-3c13af84e3d3",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"API Working\"] = jsonData.length === 7;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": peter,\n\"phone\": 123456\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9999/api/v1/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"api",
+						"v1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
